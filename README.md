@@ -6,13 +6,13 @@
 
 ## 硬件平台
 
-| 组件 | 型号/参数 |
-|------|----------|
+| 组件     | 型号/参数                         |
+| -------- | --------------------------------- |
 | 主控 MCU | STM32H750VBTx (Cortex-M7, 480MHz) |
-| 开发板 | 鹿小班 STM32H750 开发板 |
-| 摄像头 | OV5640 (DCMI 接口, 自动对焦) |
-| 显示屏 | SPI LCD (240×240) |
-| 调试接口 | SWD / USART1 |
+| 开发板   | 鹿小班 STM32H750 开发板           |
+| 摄像头   | OV5640 (DCMI 接口, 自动对焦)      |
+| 显示屏   | SPI LCD (240×240)                |
+| 调试接口 | SWD / USART1                      |
 
 ## 软件框架
 
@@ -44,18 +44,18 @@
 
 ## AI 模型
 
-| 属性 | 值 |
-|------|-----|
-| 模型名称 | `yoloface_int8` |
-| 来源 | [dog-qiuqiu/MobileNet-Yolo: YoloFace-500k](https://github.com/dog-qiuqiu/MobileNet-Yolo) |
-| 框架 | TensorFlow Lite → X-CUBE-AI |
-| 量化方式 | INT8 量化 (QLinear) |
-| 输入尺寸 | 56×56×3 (9.19 KB) |
-| 输出尺寸 | 7×7×18 (882 Bytes) |
-| 计算量 | ~1.38M MACC |
-| 权重大小 | 11.04 KiB |
-| 运行时 RAM | 29.46 KiB |
-| 转换工具 | ST Edge AI Core v2.2.0 |
+| 属性       | 值                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------- |
+| 模型名称   | `yoloface_int8`                                                                     |
+| 来源       | [dog-qiuqiu/MobileNet-Yolo: YoloFace-500k](https://github.com/dog-qiuqiu/MobileNet-Yolo) |
+| 框架       | TensorFlow Lite → X-CUBE-AI                                                          |
+| 量化方式   | INT8 量化 (QLinear)                                                                   |
+| 输入尺寸   | 56×56×3 (9.19 KB)                                                                   |
+| 输出尺寸   | 7×7×18 (882 Bytes)                                                                  |
+| 计算量     | ~1.38M MACC                                                                           |
+| 权重大小   | 11.04 KiB                                                                             |
+| 运行时 RAM | 29.46 KiB                                                                             |
+| 转换工具   | ST Edge AI Core v2.2.0                                                                |
 
 ## 功能说明
 
@@ -68,9 +68,7 @@
 
 ## 演示视频
 
-<video src="demo.mp4" controls width="100%"></video>
-
-> 实时人脸检测演示。如果无法播放，可直接在项目目录打开 `demo.mp4`。
+https://github.com/stainfi/MCU_CUBE_AI/issues/1#issue-4609118974
 
 ## 内存布局
 
@@ -82,13 +80,13 @@ Process_Buffer @ 0x24020000   (AI 处理缓冲区)
 
 ## 开发环境
 
-| 工具 | 版本 |
-|------|------|
-| IDE | Keil MDK-ARM 5 |
-| STM32CubeMX | 生成初始化代码 |
-| X-CUBE-AI | AI 模型部署 |
+| 工具            | 版本              |
+| --------------- | ----------------- |
+| IDE             | Keil MDK-ARM 5    |
+| STM32CubeMX     | 生成初始化代码    |
+| X-CUBE-AI       | AI 模型部署       |
 | ST Edge AI Core | v2.2.0 (模型转换) |
-| 编译器 | ARM Compiler 5/6 |
+| 编译器          | ARM Compiler 5/6  |
 
 ## 快速开始
 
@@ -126,17 +124,17 @@ Process_Buffer @ 0x24020000   (AI 处理缓冲区)
 
 #### 引脚宏定义
 
-| 文件 | 修改内容 |
-|------|---------|
-| `Drivers/User/Inc/dcmi_ov5640.h` | `OV5640_PWDN_PIN`、`OV5640_PWDN_PORT` 宏及对应的时钟使能宏 |
-| `Drivers/User/Inc/sccb.h` | `SCCB_SCL_PIN/PORT`、`SCCB_SDA_PIN/PORT` 及对应的时钟使能宏 |
+| 文件                               | 修改内容                                                        |
+| ---------------------------------- | --------------------------------------------------------------- |
+| `Drivers/User/Inc/dcmi_ov5640.h` | `OV5640_PWDN_PIN`、`OV5640_PWDN_PORT` 宏及对应的时钟使能宏  |
+| `Drivers/User/Inc/sccb.h`        | `SCCB_SCL_PIN/PORT`、`SCCB_SDA_PIN/PORT` 及对应的时钟使能宏 |
 
 #### GPIO 初始化代码
 
-| 文件 | 修改内容 |
-|------|---------|
+| 文件                               | 修改内容                                                                                                                                             |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Drivers/User/Src/dcmi_ov5640.c` | `HAL_DCMI_MspInit()` 函数中所有 DCMI 数据/同步/时钟引脚的 `GPIO_InitStruct.Pin`、`GPIO_InitStruct.Alternate`、`__HAL_RCC_GPIOx_CLK_ENABLE()` |
-| `Drivers/User/Src/sccb.c` | `SCCB_GPIO_Config()` 函数中 SCCB 的 SCL/SDA 引脚配置 |
+| `Drivers/User/Src/sccb.c`        | `SCCB_GPIO_Config()` 函数中 SCCB 的 SCL/SDA 引脚配置                                                                                               |
 
 #### 当前默认引脚映射
 
@@ -161,14 +159,14 @@ SCCB_SDA    → PB9
 
 #### 引脚宏定义
 
-| 文件 | 修改内容 |
-|------|---------|
+| 文件                               | 修改内容                                                           |
+| ---------------------------------- | ------------------------------------------------------------------ |
 | `Drivers/User/Inc/lcd_spi_154.h` | `LCD_Backlight_PIN/PORT`、`LCD_DC_PIN/PORT` 及对应的时钟使能宏 |
 
 #### GPIO 初始化代码
 
-| 文件 | 修改内容 |
-|------|---------|
+| 文件                               | 修改内容                                                                                                                                                                 |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Drivers/User/Src/lcd_spi_154.c` | `HAL_SPI_MspInit()` 函数中 SPI 引脚（SCK/MOSI/NSS）的 `GPIO_InitStruct.Pin`、`GPIO_InitStruct.Alternate`、`__HAL_RCC_GPIOx_CLK_ENABLE()`，以及背光/DC 引脚的配置 |
 
 #### 当前默认引脚映射
