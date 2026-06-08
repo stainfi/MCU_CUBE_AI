@@ -68,7 +68,9 @@
 
 ## 演示视频
 
-https://github.com/stainfi/MCU_CUBE_AI/issues/1#issue-4609118974
+<video src="https://github.com/stainfi/MCU_CUBE_AI/issues/1#issue-4609118974" controls width="100%"></video>
+
+> ▶️ 实时人脸检测演示
 
 ## 内存布局
 
