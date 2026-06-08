@@ -68,7 +68,7 @@
 
 ## 演示视频
 
-<video src="https://github.com/stainfi/MCU_CUBE_AI/issues/1#issue-4609118974" controls width="100%"></video>
+<video src="https://github.com/user-attachments/assets/8b4672c9-055b-4fe1-80ad-f311c49b078d" controls width="100%"></video>
 
 > ▶️ 实时人脸检测演示
 
