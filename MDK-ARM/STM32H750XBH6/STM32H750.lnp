@@ -14,7 +14,6 @@
 "stm32h750xbh6\sccb.o"
 "stm32h750xbh6\dcmi_ov5640.o"
 "stm32h750xbh6\ui.o"
-"stm32h750xbh6\safety_detect.o"
 "stm32h750xbh6\stm32h7xx_hal_cortex.o"
 "stm32h750xbh6\stm32h7xx_hal_dcmi.o"
 "stm32h750xbh6\stm32h7xx_hal_rcc.o"

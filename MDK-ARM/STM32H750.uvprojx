@@ -470,11 +470,6 @@
               <FileType>1</FileType>
               <FilePath>..\Drivers\User\Src\ui.c</FilePath>
             </File>
-            <File>
-              <FileName>safety_detect.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\User\Src\safety_detect.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -1095,11 +1090,6 @@
               <FileName>ui.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\User\Src\ui.c</FilePath>
-            </File>
-            <File>
-              <FileName>safety_detect.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\User\Src\safety_detect.c</FilePath>
             </File>
           </Files>
         </Group>
